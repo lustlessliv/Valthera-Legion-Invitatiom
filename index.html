@@ -24,6 +24,7 @@ body::before{content:"";position:fixed;top:-120px;left:50%;width:440px;height:44
 input{background:transparent;border:0;border-bottom:1px solid var(--gold);color:#e6d8b8;font:inherit;font-size:1.1rem;text-align:center;padding:8px 4px;width:min(260px,70vw);margin-bottom:34px}
 input::placeholder{color:#cdbb93;opacity:.55}
 input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--goldl);outline-offset:4px}
+  
 /* amplop dari PNG */
 .env{position:relative;width:min(380px,88vw);aspect-ratio:990/645;margin:0 auto;animation:float 5s ease-in-out infinite;perspective:900px;filter:drop-shadow(0 24px 30px rgba(0,0,0,.55))}
 .env img{position:absolute;left:0;width:100%;display:block;pointer-events:none;user-select:none}
@@ -36,6 +37,7 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .opening .seal{animation:fall .6s ease forwards}
 @keyframes fall{to{transform:translateY(40px) rotate(8deg);opacity:0}}
 @keyframes float{50%{transform:translateY(-8px)}}
+  
 /* surat */
 .letter{position:relative;max-width:560px;width:100%;margin:12px 0;padding:54px 40px 40px;text-align:center;color:var(--text);isolation:isolate;border-radius:3px;background:radial-gradient(ellipse at 50% 0,rgba(255,252,238,.5),transparent 60%),var(--paper) center/640px;box-shadow:inset 0 0 70px rgba(120,80,30,.3),0 30px 70px rgba(0,0,0,.6);transform-origin:top;animation:unfold .9s ease-out both}
 .letter::before{content:"";position:absolute;inset:12px;border:1.5px solid #bb9340;pointer-events:none}
@@ -75,6 +77,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
 .oath p{text-align:center;margin-inline:auto;max-width:34ch}
 .note{font-size:.95rem;font-style:italic;color:var(--soft);margin:14px 0 0}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none}.ember{display:none}}
+  
 </style>
 </head>
 <body>
@@ -90,7 +93,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
         <div class="env-title" aria-hidden="true">Imperium of Aldervane</div>
         <button class="seal" id="open" aria-label="Buka segel surat"></button>
       </div>
-      <p class="hint">Ketuk lambang emas untuk membuka.</p>
+      <p class="hint">Ketuk seal untuk membuka.</p>
     </div>
   </section>
 
@@ -101,15 +104,15 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
       <div id="body">
         <div class="crest r" style="--i:0"></div>
         <h1 class="r" style="--i:1">Valthera Legion of Aldervane</h1>
-        <div class="small r" style="--i:2"><em>Surat undangan dari Dewan Kekaisaran</em></div>
+        <div class="small r" style="--i:2"><em>Surat undangan dari Triune of Aldervane</em></div>
         <div class="orn r" style="--i:2"><i></i></div>
         <div class="name r" id="to" style="--i:3">Kepada Calon Ksatria,</div>
-        <p class="r" style="--i:4">Namamu sampai ke meja Dewan. Di antara ribuan yang kami amati, tindakanmu paling sering disebut di aula Aldervane.</p>
-        <p class="r" style="--i:5">Kami mengundangmu bergabung dengan Valthera Legion of Aldervane, ksatria yang bersumpah menjaga gerbang kekaisaran dan setiap orang di baliknya.</p>
+        <p class="r" style="--i:4">Namamu terdengar sampai ke meja Triune. Di antara ribuan yang kami amati, tindak-tandukmu paling sering menggema di aula Legion.</p>
+        <p class="r" style="--i:5">Kami mengundangmu bergabung dengan Valthera Legion of Aldervane, tempat para ksatria yang bersumpah menjaga gerbang Imperium dan setiap orang di baliknya.</p>
         <p class="r" style="--i:6">Surat ini menunggu jawabanmu sebelum bulan purnama berikutnya.</p>
         <div class="foot r" style="--i:7">
           <div></div>
-          <div class="sg"><small style="margin:0 0 4px">Atas titah Kaisar,</small><span class="script">Panglima Legiun</span></div>
+          <div class="sg"><small style="margin:0 0 4px">Atas titah Kaisar,</small><span class="script">Marshal of Aldervane</span></div>
         </div>
         <div class="actions r" style="--i:8">
           <button class="btn" id="accept">Terima undangan</button>
@@ -118,7 +121,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
       </div>
       <div class="oath" id="oath" hidden>
         <div class="crest"></div>
-        <h2>Datanglah ke Aldervane</h2>
+        <h2>Datanglah ke Arx Divina</h2>
         <p id="welcome"></p>
         <div class="orn"><i></i></div>
         <a class="btn" id="go" href="#" target="_blank" rel="noopener">Menuju Lokasi</a>
@@ -133,7 +136,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
   var $=function(s){return document.querySelector(s)};
   var name='';
   /* Isi dengan link website guild, mis. 'https://...' */
-  var GUILD_URL='';
+  var GUILD_URL='https://lustlessliv.github.io/Valtherians-Database/daftar/';
   for(var s=0;s<44;s++){var st=document.createElement('span');st.className='star';st.style.left=Math.random()*100+'%';st.style.top=Math.random()*75+'%';st.style.animationDuration=(2+Math.random()*4)+'s';st.style.animationDelay=(Math.random()*4)+'s';document.body.appendChild(st)}
   for(var i=0;i<14;i++){
     var e=document.createElement('span');e.className='ember';
@@ -153,7 +156,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
   $('#open').addEventListener('click',openLetter);
   $('#nm').addEventListener('keydown',function(ev){if(ev.key==='Enter')openLetter()});
   $('#accept').addEventListener('click',function(){
-    $('#welcome').textContent='Undangan diterima, '+name+'. Temui kami di markas Valthera Legion of Aldervane. Gerbangnya terbuka untukmu.';
+    $('#welcome').textContent='Jika berkenan, '+name+'. Temui kami di Arx Divina, markas Valthera Legion. Gerbangnya selalu terbuka untukmu.';
     if(GUILD_URL)$('#go').href=GUILD_URL;
     $('#body').hidden=true;$('#oath').hidden=false;
   });
