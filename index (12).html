@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Undangan Valthera Legion of Aldervane</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&family=Pinyon+Script&display=swap">
+<style>
+:root{--crest:url(assets/crest.png);--seal:url(assets/seal.png);--emblem:url(assets/emblem.png);--corner:url(assets/corner.png);--paper:url(assets/paper.jpg);
+--ink:#0d1220;--night:#1c2540;--navy:#16213f;--gold:#b8923f;--goldl:#e3c985;--text:#2a2318;--soft:#6b5a3a;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 25%,var(--night),var(--ink) 70%);color:#e6d8b8;font-family:'IM Fell English',Georgia,serif;overflow-x:hidden}
+body::before{content:"";position:fixed;top:-120px;left:50%;width:440px;height:440px;margin-left:-220px;border-radius:50%;background:radial-gradient(circle,rgba(190,205,255,.22),transparent 65%);pointer-events:none;z-index:-1}
+.star{position:fixed;z-index:-1;width:2px;height:2px;border-radius:50%;background:#cfd8f5;opacity:.25;pointer-events:none;animation:tw 3s ease-in-out infinite alternate}
+@keyframes tw{to{opacity:.9}}
+.ember{position:fixed;bottom:-10px;width:3px;height:3px;border-radius:50%;background:#e9a24a;opacity:0;pointer-events:none;animation:rise linear infinite}
+@keyframes rise{10%{opacity:.8}100%{transform:translate(var(--dx),-105vh);opacity:0}}
+.stage{min-height:100vh;display:grid;place-items:center;padding:28px 20px;text-align:center}
+[hidden]{display:none!important}
+.cap{font-size:1.15rem;margin:0 0 26px;color:#cdbb93}
+.hint{font-size:.95rem;color:#cdbb93;opacity:.8;margin:30px 0 0;font-style:italic}
+input{background:transparent;border:0;border-bottom:1px solid var(--gold);color:#e6d8b8;font:inherit;font-size:1.1rem;text-align:center;padding:8px 4px;width:min(260px,70vw);margin-bottom:34px}
+input::placeholder{color:#cdbb93;opacity:.55}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--goldl);outline-offset:4px}
+/* amplop dari PNG */
+.env{position:relative;width:min(380px,88vw);aspect-ratio:990/645;margin:0 auto;animation:float 5s ease-in-out infinite;perspective:900px;filter:drop-shadow(0 24px 30px rgba(0,0,0,.55))}
+.env img{position:absolute;left:0;width:100%;display:block;pointer-events:none;user-select:none}
+.l-back{top:0;z-index:0}.l-front{top:0;z-index:1}
+.l-flap{top:0;z-index:2;transform-origin:50% 0;transition:transform .7s ease .7s,filter .7s ease .7s}
+.seal{position:absolute;left:39.9%;top:36%;width:20.2%;aspect-ratio:128/148;z-index:5;border:0;padding:0;font-size:0;cursor:pointer;background:var(--seal,var(--crest)) center/contain no-repeat;filter:drop-shadow(0 4px 5px rgba(0,0,0,.55))}
+.env-title{position:absolute;left:0;right:0;bottom:8%;z-index:1;text-align:center;pointer-events:none;font:700 clamp(.8rem,3.9vw,1.05rem)/1 'Cinzel',serif;letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(180deg,#f6dd8f,#d4a93f 50%,#a97f26);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(60,40,5,.45))}
+.opening{animation:none}
+.opening .l-flap{transform:rotateX(180deg);filter:brightness(.55)}
+.opening .seal{animation:fall .6s ease forwards}
+@keyframes fall{to{transform:translateY(40px) rotate(8deg);opacity:0}}
+@keyframes float{50%{transform:translateY(-8px)}}
+/* surat */
+.letter{position:relative;max-width:560px;width:100%;margin:12px 0;padding:54px 40px 40px;text-align:center;color:var(--text);isolation:isolate;border-radius:3px;background:radial-gradient(ellipse at 50% 0,rgba(255,252,238,.5),transparent 60%),var(--paper) center/640px;box-shadow:inset 0 0 70px rgba(120,80,30,.3),0 30px 70px rgba(0,0,0,.6);transform-origin:top;animation:unfold .9s ease-out both}
+.letter::before{content:"";position:absolute;inset:12px;border:1.5px solid #bb9340;pointer-events:none}
+.letter::after{content:"";position:absolute;inset:17px;border:1px solid #d3b97f;pointer-events:none}
+@keyframes unfold{from{transform:scaleY(.04);opacity:0}to{transform:scaleY(1);opacity:1}}
+.emblem{position:absolute;inset:0;z-index:-1;background:var(--emblem,var(--crest)) center 55%/min(60%,300px) no-repeat;opacity:.07;pointer-events:none}
+.corner{position:absolute;width:56px;height:56px;background:var(--corner) center/contain no-repeat;pointer-events:none}
+.corner.tl{top:8px;left:8px}.corner.tr{top:8px;right:8px;transform:scaleX(-1)}.corner.bl{bottom:8px;left:8px;transform:scaleY(-1)}.corner.br{bottom:8px;right:8px;transform:scale(-1,-1)}
+.r{opacity:0;filter:blur(3px);animation:ink .9s ease forwards;animation-delay:calc(var(--i)*.35s + .8s)}
+@keyframes ink{to{opacity:1;filter:none}}
+.reg{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.crest{width:84px;height:98px;margin:0 auto 12px;background:var(--crest) center/contain no-repeat}
+h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;text-transform:uppercase;margin:0 0 6px;color:#1f1a14}
+.small{font-size:.95rem;line-height:1.5;color:#4a3d28;margin:0 auto;max-width:34ch}
+.name{font:400 clamp(2rem,9vw,2.7rem)/1.25 'Pinyon Script',cursive;color:#1f1a14;margin:4px 0 6px}
+.legion{font:700 clamp(1.35rem,6.4vw,1.9rem)/1.2 'Cinzel',serif;letter-spacing:.06em;text-transform:uppercase;margin:8px 0 0;color:#1f1a14}
+.orn{height:14px;margin:12px auto 16px;max-width:260px;display:flex;align-items:center;gap:10px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn::after{transform:scaleX(-1)}
+.orn i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);outline:1px solid var(--gold);outline-offset:3px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:7px 16px;margin:0 0 18px;text-align:left;font-size:1rem;line-height:1.45}
+.facts dt{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);padding-top:4px}
+.facts dd{margin:0;font-style:italic}
+.letter p{font-size:1.05rem;line-height:1.7;margin:0 0 14px;text-align:left}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:20px;text-align:left}
+.foot small{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.foot span{font-size:.95rem}
+.sg{text-align:center;min-width:150px}
+.script{display:block;font:400 1.9rem/1.1 'Pinyon Script',cursive;color:#1f1a14;border-bottom:1px solid rgba(42,35,24,.4);padding:0 8px 2px}
+.actions{margin-top:24px}
+.btn{display:inline-block;text-decoration:none;background:linear-gradient(#2a3a68,var(--navy));color:var(--goldl);border:1px solid var(--gold);padding:13px 28px;font:500 .95rem 'Cinzel',serif;letter-spacing:.06em;cursor:pointer;border-radius:2px;transition:filter .2s}
+.btn:hover{filter:brightness(1.25)}
+.link{display:block;margin:16px auto 0;background:none;border:0;color:var(--soft);font:inherit;text-decoration:underline;cursor:pointer}
+.oath .crest{animation:glow 2s ease-in-out infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 0 10px rgba(227,201,133,.9))}}
+.oath h2{font:700 1.45rem 'Cinzel',serif;letter-spacing:.05em;text-transform:uppercase;margin:6px 0 14px;color:#1f1a14}
+.oath p{text-align:center;margin-inline:auto;max-width:34ch}
+.note{font-size:.95rem;font-style:italic;color:var(--soft);margin:14px 0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.r{opacity:1;filter:none}.ember{display:none}}
+</style>
+</head>
+<body>
+<main>
+  <section class="stage" id="s1">
+    <div>
+      <p class="cap">Sebuah surat tiba untukmu.</p>
+      <input id="nm" maxlength="24" placeholder="Tulis namamu" aria-label="Namamu" autocomplete="off">
+      <div class="env" id="env">
+        <img class="l-back" src="assets/back.png" alt="">
+        <img class="l-front" src="assets/front.png" alt="">
+        <img class="l-flap" src="assets/flap.png" alt="">
+        <div class="env-title" aria-hidden="true">Imperium of Aldervane</div>
+        <button class="seal" id="open" aria-label="Buka segel surat"></button>
+      </div>
+      <p class="hint">Ketuk lambang emas untuk membuka.</p>
+    </div>
+  </section>
+
+  <section class="stage" id="s2" hidden>
+    <article class="letter">
+      <div class="emblem" aria-hidden="true"></div>
+      <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+      <div id="body">
+        <div class="crest r" style="--i:0"></div>
+        <h1 class="r" style="--i:1">Valthera Legion of Aldervane</h1>
+        <div class="small r" style="--i:2"><em>Surat undangan dari Dewan Kekaisaran</em></div>
+        <div class="orn r" style="--i:2"><i></i></div>
+        <div class="name r" id="to" style="--i:3">Kepada Calon Ksatria,</div>
+        <p class="r" style="--i:4">Namamu sampai ke meja Dewan. Di antara ribuan yang kami amati, tindakanmu paling sering disebut di aula Aldervane.</p>
+        <p class="r" style="--i:5">Kami mengundangmu bergabung dengan Valthera Legion of Aldervane, ksatria yang bersumpah menjaga gerbang kekaisaran dan setiap orang di baliknya.</p>
+        <p class="r" style="--i:6">Surat ini menunggu jawabanmu sebelum bulan purnama berikutnya.</p>
+        <div class="foot r" style="--i:7">
+          <div></div>
+          <div class="sg"><small style="margin:0 0 4px">Atas titah Kaisar,</small><span class="script">Panglima Legiun</span></div>
+        </div>
+        <div class="actions r" style="--i:8">
+          <button class="btn" id="accept">Terima undangan</button>
+          <button class="link" id="again">Baca ulang dari awal</button>
+        </div>
+      </div>
+      <div class="oath" id="oath" hidden>
+        <div class="crest"></div>
+        <h2>Datanglah ke Aldervane</h2>
+        <p id="welcome"></p>
+        <div class="orn"><i></i></div>
+        <a class="btn" id="go" href="#" target="_blank" rel="noopener">Menuju Lokasi</a>
+        <p class="note" id="note" hidden></p>
+        <button class="link" id="again2">Baca ulang dari awal</button>
+      </div>
+    </article>
+  </section>
+</main>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var name='';
+  /* Isi dengan link website guild, mis. 'https://...' */
+  var GUILD_URL='';
+  for(var s=0;s<44;s++){var st=document.createElement('span');st.className='star';st.style.left=Math.random()*100+'%';st.style.top=Math.random()*75+'%';st.style.animationDuration=(2+Math.random()*4)+'s';st.style.animationDelay=(Math.random()*4)+'s';document.body.appendChild(st)}
+  for(var i=0;i<14;i++){
+    var e=document.createElement('span');e.className='ember';
+    e.style.left=(Math.random()*100)+'%';
+    e.style.setProperty('--dx',(Math.random()*80-40)+'px');
+    e.style.animationDuration=(7+Math.random()*7)+'s';
+    e.style.animationDelay=(Math.random()*8)+'s';
+    document.body.appendChild(e);
+  }
+  function openLetter(){
+    if($('#env').classList.contains('opening'))return;
+    name=$('#nm').value.trim()||'Calon Ksatria';
+    $('#to').textContent='Kepada '+name+',';
+    $('#env').classList.add('opening');
+    setTimeout(function(){$('#s1').hidden=true;$('#s2').hidden=false;window.scrollTo(0,0)},1700);
+  }
+  $('#open').addEventListener('click',openLetter);
+  $('#nm').addEventListener('keydown',function(ev){if(ev.key==='Enter')openLetter()});
+  $('#accept').addEventListener('click',function(){
+    $('#welcome').textContent='Undangan diterima, '+name+'. Temui kami di markas Valthera Legion of Aldervane. Gerbangnya terbuka untukmu.';
+    if(GUILD_URL)$('#go').href=GUILD_URL;
+    $('#body').hidden=true;$('#oath').hidden=false;
+  });
+  $('#go').addEventListener('click',function(ev){if(!GUILD_URL){ev.preventDefault();$('#note').textContent='Tautan guild belum dipasang.';$('#note').hidden=false}});
+  function replay(){location.reload()}
+  $('#again').addEventListener('click',replay);
+  $('#again2').addEventListener('click',replay);
+})();
+</script>
+</body>
+</html>
