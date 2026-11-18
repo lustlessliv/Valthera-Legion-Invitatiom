@@ -157,7 +157,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
   }
   function openLetter(){
     if($('#env').classList.contains('opening'))return;
-    name=$('#nm').value.trim()||'Calon Ksatria';
+    name=$('#nm').value.trim()||'Aspirant';
     $('#to').textContent='Kepada '+name+',';
     $('#env').classList.add('opening');
     setTimeout(function(){$('#s1').hidden=true;$('#s2').hidden=false;window.scrollTo(0,0)},1700);
