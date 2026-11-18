@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Valthera Legion of Aldervane</title>
+<link rel="preload" as="image" href="assets/paper.jpg">
+<link rel="preload" as="image" href="assets/corner.png">
+<link rel="preload" as="image" href="assets/crest.png">
+<link rel="preload" as="image" href="assets/emblem.png">
+<link rel="preload" as="image" href="assets/seal.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&family=Pinyon+Script&display=swap">
 <style>
 :root{--crest:url(assets/crest.png);--seal:url(assets/seal.png);--emblem:url(assets/emblem.png);--corner:url(assets/corner.png);--paper:url(assets/paper.jpg);
@@ -144,6 +149,7 @@ h1{font:700 clamp(1.25rem,5.6vw,1.6rem)/1.2 'Cinzel',serif;letter-spacing:.07em;
 (function(){
   var $=function(s){return document.querySelector(s)};
   var name='';
+  ['paper.jpg','corner.png','crest.png','emblem.png','seal.png'].forEach(function(f){var im=new Image();im.src='assets/'+f});
 
   var GUILD_URL='https://lustlessliv.github.io/Valtherians-Database/daftar/';
   for(var s=0;s<44;s++){var st=document.createElement('span');st.className='star';st.style.left=Math.random()*100+'%';st.style.top=Math.random()*75+'%';st.style.animationDuration=(2+Math.random()*4)+'s';st.style.animationDelay=(Math.random()*4)+'s';document.body.appendChild(st)}
